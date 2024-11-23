@@ -57,6 +57,13 @@
             max-width: 600px;
             height: auto;
         }
+        
+        .back-button {
+            margin-top: 20px;
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -64,8 +71,9 @@
     <header>
         <div class="container">
             <h1><a href="https://www.hust.edu.cn/" target="_blank" style="color:red">华中科技大学</a></h1>
-
         </div>
+        <button class="back-button" onclick="goBack()">返回上一页</button>
+        <!-- 添加返回按钮 -->
     </header>
 
     <div class="container">
@@ -88,6 +96,11 @@
             <p>华中科技大学注重学生的全面发展，提供了丰富的校园文化活动和体育设施。学校鼓励学生参与社会实践和创新创业，为学生提供了广阔的发展平台。</p>
         </div>
     </div>
+    <script>
+        function goBack() {
+            window.history.back(); // 返回上一页
+        }
+    </script>
 </body>
 
 </html>
