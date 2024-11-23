@@ -134,6 +134,13 @@
             color: black;
             text-align: center;
         }
+        
+        .back-button {
+            margin-top: 20px;
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -141,6 +148,7 @@
     <div class="container">
         <h1>欢迎来到折纸大学</h1>
         <h1><a href="https://www.zhezhiuniversity.com" target="_blank" style="color:red">折大官网</a></h1>
+        <button class="back-button" onclick="goBack()">返回上一页</button>
         <h2>学校简介</h2>
         <p>折纸大学是一所位于美梦之地匹诺康尼上的知名学府，以其独特的教育方式和卓越的学术成就以及校训“美梦多彩，理想自由”而闻名。</p>
         <img src="../image/map.jpg" alt="折纸大学地图" style="max-width: 100%;">
@@ -181,6 +189,15 @@
             <li>地址：匹诺康尼折纸大学</li>
         </ul>
     </div>
+
+    <!-- 添加返回按钮 -->
+    <script>
+        function goBack() {
+            window.history.back(); // 返回上一页
+        }
+    </script>
+
+
 </body>
 
 </html>
