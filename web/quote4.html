@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字游戏</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 30px;
+            background-image: url('../image/du.jpg');
+            background-size: cover;
+            backdrop-filter: blur(10px);
+        }
+        
+        #message {
+            margin-top: 20px;
+            font-size: 40px;
+            color: white;
+        }
+        
+        h1,
+        p {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .back-button {
+            margin-top: 20px;
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>猜数字游戏</h1>
+    <p>在1到100之间猜一个数字</p>
+    <input type="number" id="guess" min="1" max="100">
+    <button onclick="checkGuess()">提交</button>
+    <div id="message"></div>
+    <button class="back-button" onclick="goBack()">返回上一页</button>
+    <!-- 添加返回按钮 -->
+
+    <script>
+        let secretNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        function checkGuess() {
+            let guess = document.getElementById('guess').value;
+            attempts++;
+
+            if (guess == secretNumber) {
+                showMessage(`恭喜你，猜对了！你一共猜了${attempts}次。`);
+                document.getElementById('guess').disabled = true; // 禁用输入框
+            } else if (guess < secretNumber) {
+                showMessage('猜低了！再试一次。');
+            } else {
+                showMessage('猜高了！再试一次。');
+            }
+        }
+
+        function showMessage(msg) {
+            document.getElementById('message').innerText = msg;
+        }
+
+        function goBack() {
+            window.history.back(); // 返回上一页
+        }
+    </script>
+</body>
+
+</html>
