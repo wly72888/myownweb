@@ -47,6 +47,12 @@
             color: aliceblue;
             font-size: 48px;
         }
+        .back-button {
+            margin-top: 20px;
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -61,8 +67,8 @@
         <img src="image/pic1.jpg" alt="个人照片" class="profile-pic">
         <div class="info">
             <h1>welcome to my web</h1>
-
         </div>
+        <button class="back-button" onclick="goBack()">返回上一页</button>
     </div>
     <p>
         <a href="web/quote1.html">
@@ -85,9 +91,11 @@
         <p style="color: red;font-size:48px">点击图片,参与小游戏</p>
     </p>
     </p>
-
-
-
+    <script>
+        function goBack() {
+            window.history.back(); // 返回上一页
+        }
+    </script>
 </body>
 
 </html>
