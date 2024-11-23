@@ -81,6 +81,13 @@
         .prize-button:hover {
             background-color: darkgreen;
         }
+        
+        .back-button {
+            margin-top: 20px;
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -92,6 +99,7 @@
         <div id="result"></div>
         <div id="prize-links"></div>
     </div>
+    <button class="back-button" onclick="goBack()">返回上一页</button>
 
     <script>
         function drawLottery() {
@@ -114,6 +122,10 @@
 
             const prizeLinksElement = document.getElementById("prize-links");
             prizeLinksElement.innerHTML = `<button class="prize-button" onclick="window.location.href='${prizes[randomIndex].link}'">领奖</button>`;
+        }
+
+        function goBack() {
+            window.history.back(); // 返回上一页
         }
     </script>
 </body>
